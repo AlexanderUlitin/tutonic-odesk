@@ -1,7 +1,8 @@
 TutonicOdeskTest::Application.routes.draw do
-  root to: 'pages#home'
+  root to: 'sessions#new'
 
   resources :users
+  resources :sessions, :only => [:new, :create, :destroy]
 
   match '/signup',  to: 'users#new'
 
